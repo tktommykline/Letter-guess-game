@@ -1,20 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Letter guess game!</title>
-    <link rel="stylesheet" href="Letter-guess-game.css"/>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-</head>
-<body>
-    <h1 class="Link-test">
-        Does this link correctly!?!?!?!?!?!?
+    <link rel="stylesheet" href="Letter-guess-game.css" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+      integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <h1>
+      Can you read a computer's mind?
     </h1>
-    <button id= Test-button>TEST</button>
-    
+    <h2>
+      Try to guess what letter the computer is thinking of.
+    </h2>
+    <p>
+      Letters already guessed:
+    </p>
+    <div id="Lettersguessed">
+        
+    </div>
+    <p>
+      Wins:
+    </p>
+    <div id="Wins">
+
+    </div>
+    <p>
+      Losses:
+    </p>
+    <div id="Losses">
+
+    </div>
+    <script>
+      // An array of letters to be randomly picked by the computer
+      var Letters = [
+        "a",
+        "b",
+        "c",
+        "d",
+        "e",
+        "f",
+        "g",
+        "h",
+        "i",
+        "j",
+        "k",
+        "l",
+        "m",
+        "n",
+        "o",
+        "p",
+        "q",
+        "r",
+        "s",
+        "t",
+        "u",
+        "v",
+        "w",
+        "x",
+        "y",
+        "z"
+      ];
+      var target;
+      // have the computer randomly select a letter and make that selection a var. 
+
+// "Can't get the random letter to select (or if it is get it to show in the console.)"
+
+      function random_item(Letters) {
+        target = Letters[Math.floor(Math.random() * Letters.length)];
+      }
+
+      // add an event that recognizes the key press of the player.
+      document.onkeyup = function(event) {
+        var letterGuessed = event.key.toLowerCase();
+        console.log(letterGuessed);
+        if(letterguessed = target) {
+            alert("You Win!");
+        } else {
+            lettersGuessed.push(letterGuessed);
+            upDateguesses(); 
+        };
+      };
+      var upDateguesses = function() {
+          document.querySelector("#Lettersguessed").innerHTML = lettersGuessed.join(", ")
+            console.log(document.querySelector("#Lettersguessed"));
+      }
+      var lettersGuessed = [];
+      console.log(lettersGuessed);
+
+// "I don't really understand what to do for anything below this."
+
+      // add logic that if the key pressed by the player is the random var from array "Letter" trigger a win
+        
+      // add logic for if the key pressed by the player is NOT the random var it subtracts 1 "try"
+
+      // make accepting the alert reset the game(???)
+    </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <script src="Letter-guess-game.js"></script>
-</body>
+  </body>
 </html>
